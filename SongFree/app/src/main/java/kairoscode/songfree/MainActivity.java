@@ -12,32 +12,30 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     String tag = "Lifecycle";
+
     Map<String,String> users = new HashMap<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(tag, "In the onCreate() event");
+        Toast.makeText(this, "In the onCreate()", Toast.LENGTH_SHORT).show();
     }
-
-    public void onRestart()
-    {
+    public void onRestart() {
         super.onRestart();
         Log.d(tag, "In the onRestart() event");
     }
-    public void onResume()
-    {
+    public void onResume() {
         super.onResume();
         Log.d(tag, "In the onResume() event");
     }
-    public void onPause()
-    {
+    public void onPause() {
         super.onPause();
         Log.d(tag, "In the onPause() event");
     }
-    public void onStop()
-    {
+    public void onStop() {
         super.onStop();
         Log.d(tag, "In the onStop() event");
     }
@@ -55,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readUsers(){
-        Toast.makeText(this, users.get("carlos"), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "User: carlos -> Pass: " + users.get("carlos"), Toast.LENGTH_SHORT).show();
     }
 
     private void chargeData(){
